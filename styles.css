@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(216, 12%, 8%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.board-container {
+  background-color: #14bdac;
+  margin: 50px;
+  border-radius: 26px;
+  padding: 50px;
+}
+.title {
+  text-align: center;
+}
+.title span {
+  color: #f2ebd3;
+}
+
+.status-actios {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 26px;
+  font-size: 20px;
+  height: 26px;
+  font-weight: bold;
+}
+.status span {
+  color: #f2ebd3;
+}
+
+.reset {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.reset:hover {
+  color: #f2ebd3;
+  transform: translateY(-0.25em);
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 12px;
+  margin-top: 50px;
+  background-color: #0da192;
+}
+.game-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 160px;
+  width: 160px;
+  background-color: #14bdac;
+}
+
+.none {
+  pointer-events: none;
+}
+.x {
+  color: #545454;
+  font-size: 150px;
+}
+.o {
+  color: #f2ebd3;
+  font-size: 180px;
+}
+.winner-cell {
+  color: rgb(181, 46, 54);
+}
+
+.x::before {
+  content: "×";
+}
+.o::after {
+  content: "○";
+}
+
+@media only screen and (max-width: 640px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .x {
+    font-size: 100px;
+  }
+
+  .o {
+    font-size: 125px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .game-cell {
+    height: 60px;
+    width: 68px;
+  }
+
+  .x {
+    font-size: 50px;
+  }
+
+  .o {
+    font-size: 50px;
+  }
+
+  .status {
+    font-size: 16px;
+  }
+  .reset {
+    font-size: 16px;
+  }
+}
